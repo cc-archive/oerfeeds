@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block title %}
+  Delete Feed
+{% endblock %}
+
+{% block body %}
+
+<div class="form">
+
+  <form action="." method="POST">
+
+    <div class="field">
+      <span class="field_label">
+	Are you sure you want to delete
+	<a href="{{feed.url}}">{{feed.title}}</a>?
+      </span>
+
+      <input type="submit" name="confirm" value="Delete" />
+      <input type="submit" name="confirm" value="Cancel" />
+
+    </div>
+
+  </form>
+
+</div>
+
+{% endblock %}
