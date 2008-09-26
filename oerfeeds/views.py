@@ -60,9 +60,17 @@ class AddOrEdit(webapp.RequestHandler):
 
         # make sure the user is currently logged in
         if users.get_current_user() is None:
-            self.redirect('/')
+            self.error(403)
 
-        data = forms.OerFeedForm(instance = self._get_existing(key),
+        # get the item we're editing, if that's what we're doing
+        instance = self._get_existing(key)
+
+        # make sure we're allowed to edit this
+        if instance is not None and not(users.is_current_user_admin()) \
+                instance.creator != users.get_current_user():
+            self.error(403)
+            
+        data = forms.OerFeedForm(instance = instance,
                                  data=self.request.POST)
 
         if data.is_valid():
