@@ -1,0 +1,5 @@
+* form error display
+* delete feed
+* OPML view
+* administrator privileges?
+* feed type detection

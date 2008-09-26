@@ -1,0 +1,12 @@
+application: oerfeeds
+version: 1
+runtime: python
+api_version: 1
+
+handlers:
+- url: /resources
+  static_dir: resources
+
+- url: /.*
+  script: oerfeeds.py
+

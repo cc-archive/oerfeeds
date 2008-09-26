@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block title %}Contributed Feeds{% endblock %}
+
+{% block body %}
+
+    <table id="manager">
+
+      {% for f in feeds %}
+
+      <tr>
+	<td>{{ f.title }}</td>
+	<td><a href="{{ f.url }}">{{ f.url }}</a></td>
+	<td><a href="/edit/{{f.key.id}}/">(edit)</a></td>
+      </tr>
+
+      {% endfor %}
+
+    </table>
+
+    <p>(<a href="http://www.opml.org/spec2">OPML Format</a>)</p>
+
+{% endblock %}

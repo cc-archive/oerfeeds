@@ -1,0 +1,54 @@
+body {font-family:arial;font-size:11pt;margin:0px;padding:0px;}
+body a{color: #30689e}
+body a:visited {color:#30689e;}
+h1 {font-family:arial;font-size:15pt;text-transform: uppercase;}
+h2 {font-family:arial;font-size:13pt;text-transform: uppercase;}
+h3 {font-family:arial;font-size:12pt;}
+
+img {border:none;}
+fieldset{margin:5px;float:left;clear:none;}
+fieldset legend{font-size:130%;font-weight:bolder;color:#dba855;}
+fieldset label{float:left;clear:both;margin-top:3px;font-weight:bolder;}
+fieldset input{float:left;}
+.form_part{float:left;clear:both;}
+.form-buttons{text-align:center;clear:both;padding:10px;width:100%;}
+
+#header{height:65px;text-align:right;width:100%;}
+#topbar{background-color: #f7eed4;}
+#topbar{border-bottom:solid 1px #dba855;border-top:solid 1px #dba855;}
+#logo, #topbar{float:left;clear:both;width:100%;margin-bottom:30px;padding:0px;text-align:center;}
+#logo {margin-bottom:40px;}
+
+#user-admin{padding:8px 20px;}
+#admin a{color:#dba855;}
+
+#messages{color:#ff0000;font-weight:bolder;text-align:center;margin:2px 0px;}
+.fieldWithErrors {padding:2px;background-color:red;display:table;}
+#errorExplanation {width:400px;border:2px solid red;padding:7px;padding-bottom:12px;margin:10px auto;background-color:#f0f0f0;}
+#errorExplanation h2 {text-align:left;font-weight:bold;padding:5px 5px 5px 15px;font-size:100%;margin:-7px;background-color:#c00;color:#fff;}
+#errorExplanation p {color:#333;margin-bottom:0;padding:5px;}
+#errorExplanation ul li {list-style:square;}
+
+#buttons{text-align:center; }
+#buttons img{margin-left:20px;margin-right:20px;}
+
+#content {width:725px;margin:auto;margin-top:30px;}
+#content h2{clear:both;}
+#content fieldset legend{font-size:100%;font-weight:bolder;color:#dba855;clear:both;}
+#content p{clear:both;}
+
+#footer{clear:both;float:left;margin-top:35px;height:35px;background-color:#dba855;text-align:center;width:100%;color:#f7eed4;font-size:9pt;padding-top:1px;}
+#footer a, a:visited {color:#f7eed4;, text-decoration: underline;}
+
+/*login*/
+#signup-main, #login-main, #openid-main{margin:20px auto;width:400px;text-align:center;}
+#openid_url {background:url(/images/login-bg.gif) no-repeat #fff 5px;padding-left:25px;}
+#signup-main .form-fields{text-align:right;}
+#signup-main h1{text-align:center;}
+#signup-main label input{float:left;clear:none;}
+#login-main fieldset{clear:both;}
+#login-or{clear:both;font-weight:bolder;margin:30px 0px;}
+
+#login-main fieldset{margin:5px;float:none;clear:both;}
+#login-main fieldset label{float:left;clear:none;margin-top:3px;font-weight:bolder;}
+#login-main fieldset input{float:left;}

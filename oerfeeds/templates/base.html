@@ -1,0 +1,56 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="application/xhtml+xml; charset=utf-8" />
+  <title>{% block head_title %}oerfeeds.info{% endblock %}</title>
+  <link href="/resources/oerfeeds.css" media="all" 
+	rel="stylesheet" type="text/css" />
+  <style>
+    {% block style %}
+    {% endblock %}
+  </style>
+</head>
+<body>
+  <div id="header">
+    <div id="user-admin">
+
+      {% if user %}
+
+      <a href="/add/">add a feed</a>
+      <a href="/userfeeds/">my feeds</a>
+      <a href="{{logout_url}}">logout</a>
+
+      {% else %}
+
+      <a href="{{login_url}}">login</a> 
+
+      {% endif %}
+    </div>
+
+  </div>
+
+  <div id="topbar">
+  </div>
+  
+  <div id="messages">
+  </div>
+
+  <div id="content">
+    <h1>oerfeeds.info</h1>
+    <h2>{% block title %}{% endblock %}</h2>
+
+{% block body %}
+{% endblock %}
+
+  </div>
+
+  <div id="footer">
+    
+    {% block footer %}
+    {% endblock %}
+
+  </div>
+
+</body>
+</html>
+

@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block title %}
+  {% if feed %}Edit Feed
+  {% else %} Add Feed
+  {% endif %}
+{% endblock %}
+
+{% block body %}
+
+<div class="form">
+
+  <form action="." method="POST">
+
+    <table>
+      {{ form }}
+    </table>
+
+    <input type="submit" />
+  </form>
+</div>
+
+{% endblock %}
