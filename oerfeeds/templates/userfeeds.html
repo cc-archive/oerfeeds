@@ -12,6 +12,7 @@
 	<td>{{ f.title }}</td>
 	<td><a href="{{ f.url }}">{{ f.url }}</a></td>
 	<td><a href="/edit/{{f.key.id}}/">(edit)</a></td>
+	<td><a href="/delete/{{f.key.id}}/">(delete)</a></td>
       </tr>
 
       {% endfor %}

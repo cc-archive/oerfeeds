@@ -66,7 +66,7 @@ class AddOrEdit(webapp.RequestHandler):
         instance = self._get_existing(key)
 
         # make sure we're allowed to edit this
-        if instance is not None and not(users.is_current_user_admin()) \
+        if instance is not None and not(users.is_current_user_admin()) and \
                 instance.creator != users.get_current_user():
             self.error(403)
             
@@ -89,17 +89,45 @@ class AddOrEdit(webapp.RequestHandler):
 
 class Delete(webapp.RequestHandler):
 
+
+    def _get_existing(self, key):
+
+        return models.OerFeed.get(db.Key.from_path('OerFeed', int(key)))
+
     @login_required
-    def get(self, key):
+    def get(self, key=None):
+        
+        feed = self._get_existing(key)
 
-        # get the specified feed
+        if not(users.is_current_user_admin()) and \
+                feed.creator != users.get_current_user():
+            self.error(403)
 
-        # make sure the logged in user "owns" it
+        self.response.out.write(
+            render_template('delete.html', 
+                            dict(feed=feed), 
+                            self.request)
+            )
 
-        pass
+    def post(self, key=None):
 
-    def post(self, key):
-        pass
+        # make sure the user is currently logged in
+        if users.get_current_user() is None:
+            self.error(403)
+
+        # get the item we're deleting
+        feed = self._get_existing(key)
+
+        # make sure we're allowed to delete this
+        if not(users.is_current_user_admin()) and \
+                feed.creator != users.get_current_user():
+            self.error(403)
+            
+        # see if the user confirmed
+        if self.request.get('confirm', 'Cancel') == 'Delete':
+            feed.delete()
+
+        self.redirect('/userfeeds/')
 
 
 class UserFeeds(webapp.RequestHandler):
