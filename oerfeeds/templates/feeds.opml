@@ -1,0 +1,17 @@
+<opml version="2.0">
+
+  <head>
+    <title>oerfeeds.info</title>
+    <dateModified>{{ lastModified }}</dateModified>
+    <ownerId>http://oerfeeds.info</ownerId>
+    <ownerEmail>webmaster@oerfeeds.info</ownerEmail>
+  </head>
+
+  <body>
+    {% for feed in feeds %}
+    <outline text="{{ feed.title }}"
+      xmlUrl="{{ feed.url }}" type="{{ feed.type }}"/>
+    {% endfor %}
+  </body>
+
+</opml>

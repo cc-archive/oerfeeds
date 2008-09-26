@@ -1,4 +1,2 @@
-* delete feed
-* OPML view
 * administrator privileges?
 * feed type detection

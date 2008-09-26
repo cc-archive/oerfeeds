@@ -10,7 +10,7 @@ application = webapp.WSGIApplication(
      ('/edit/(.+)/', views.AddOrEdit),
      ('/delete/(.+)/', views.Delete),
      ('/userfeeds/', views.UserFeeds),
-     ('/opml/', views.Opml),
+     ('/feeds.opml', views.Opml),
      ],
     debug=True)
 

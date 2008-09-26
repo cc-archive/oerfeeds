@@ -14,12 +14,17 @@ class Opml(webapp.RequestHandler):
 
     def get(self):
 
-        feeds = model.OerFeed.all()
-
-        # XXX
-        self.response.headers['Content-type'] = 'application/opml'
+        feeds = models.OerFeed.gql("ORDER BY updated DESC")
+        if feeds.count() > 0:
+            lastModified = feeds[0].updated
+        else:
+            lastModified = ""
+        
+        self.response.headers['Content-type'] = 'text/x-opml'
         self.response.out.write(
-            render_template('feeds.opml', dict(feeds=feeds))
+            render_template('feeds.opml', 
+                            dict(feeds=feeds,
+                                 lastModified=lastModified))
             )
 
 
