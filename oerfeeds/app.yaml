@@ -5,8 +5,8 @@ api_version: 1
 
 handlers:
 - url: /resources
-  static_dir: resources
+  static_dir: oerfeeds/resources
 
 - url: /.*
-  script: oerfeeds.py
+  script: oerfeeds/app.py
 

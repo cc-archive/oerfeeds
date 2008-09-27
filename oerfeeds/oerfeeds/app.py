@@ -2,7 +2,7 @@ import os
 from google.appengine.ext import webapp
 from google.appengine.ext.webapp.util import run_wsgi_app
 
-import views
+from oerfeeds import views
 
 application = webapp.WSGIApplication(
     [('/', views.Index),
@@ -11,6 +11,7 @@ application = webapp.WSGIApplication(
      ('/delete/(.+)/', views.Delete),
      ('/userfeeds/', views.UserFeeds),
      ('/feeds.opml', views.Opml),
+     ('/scrape', views.Scrape),
      ],
     debug=True)
 

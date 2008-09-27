@@ -1,10 +1,12 @@
 import cgi
+import logging
 
 from support import render_template
 from google.appengine.ext import db
 from google.appengine.ext import webapp
 from google.appengine.ext.webapp.util import login_required
 from google.appengine.api import users
+from google.appengine.api import urlfetch
 
 import models
 import forms
@@ -148,3 +150,19 @@ class UserFeeds(webapp.RequestHandler):
                             self.request)
             )
 
+class Scrape(webapp.RequestHandler):
+
+    def get(self):
+
+        result = {}
+
+        result['url'] = self.request.get('feed_url', None)
+        if result['url'] is not None:
+
+            feed = urlfetch.fetch(result['url'])
+            result['content-type'] = feed.headers['content-type']
+
+        else:
+            result['content-type'] = ''
+
+        print
