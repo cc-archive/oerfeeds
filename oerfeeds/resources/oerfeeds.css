@@ -37,7 +37,7 @@ fieldset input{float:left;}
 #content fieldset legend{font-size:100%;font-weight:bolder;color:#dba855;clear:both;}
 #content p{clear:both;}
 
-#footer{clear:both;float:left;margin-top:35px;height:35px;background-color:#dba855;text-align:center;width:100%;color:#f7eed4;font-size:9pt;padding-top:1px;}
+#footer{clear:both;float:left;margin-top:35px;height:70px;background-color:#dba855;text-align:center;width:100%;color:#f7eed4;font-size:9pt;padding-top:1px;}
 #footer a, a:visited {color:#f7eed4;, text-decoration: underline;}
 
 /*login*/
