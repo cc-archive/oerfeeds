@@ -1,5 +1,39 @@
 {% extends "base.html" %}
 
+{% block header %}
+<script src="http://yui.yahooapis.com/2.5.2/build/yahoo-dom-event/yahoo-dom-event.js"></script> 
+<script src="http://yui.yahooapis.com/2.5.2/build/element/element-beta-min.js"></script> 
+<script src="http://yui.yahooapis.com/2.5.2/build/connection/connection-min.js"></script>
+
+<script>
+YAHOO.util.Event.onDOMReady(
+
+  function() {
+
+    var id_url = new YAHOO.util.Element("id_url");
+
+    // store the initial value of the URL field
+    var INITIAL_URL = id_url.get('value');
+
+    id_url.on("blur", 
+      function(e) {
+
+        // see if the value has changed
+        if (id_url.get('value') != INITIAL_URL) {
+
+           // ask the server to tell use what the title and type are
+
+
+        } // the value has changed
+      } // on blur
+      );
+  }
+);
+
+</script>
+
+{% endblock %}
+
 {% block title %}
   {% if feed %}Edit Feed
   {% else %} Add Feed
