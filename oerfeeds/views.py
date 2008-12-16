@@ -1,6 +1,9 @@
 import cgi
 import logging
 
+import simplejson
+import feedparser
+
 from support import render_template
 from google.appengine.ext import db
 from google.appengine.ext import webapp
@@ -159,10 +162,15 @@ class Scrape(webapp.RequestHandler):
         result['url'] = self.request.get('feed_url', None)
         if result['url'] is not None:
 
-            feed = urlfetch.fetch(result['url'])
-            result['content-type'] = feed.headers['content-type']
-
+            feed_contents = urlfetch.fetch(result['url'])
+            doc = feedparser.parse(feed_contents.content)
+            logging.info(doc)
+            # result['content-type'] = feed.headers['content-type'].split(';')[0]
+            result['title'] = doc.feed.title
+            result['format'] = doc.feed.info_detail.type
         else:
             result['content-type'] = ''
 
-        print
+        self.response.headers['content-type'] = 'text/plain'
+        self.response.out.write( simplejson.dumps(result) )
+
