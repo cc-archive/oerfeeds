@@ -60,9 +60,8 @@ YAHOO.util.Event.onDOMReady(
 
     {% endfor %}
 
-    <input type="submit" value="Add" />
+    <input type="submit" value="{% if feed %}Save{% else %}Add{% endif %}" />
 
-  </form>
-</div>
+  </form></div>
 
 {% endblock %}
