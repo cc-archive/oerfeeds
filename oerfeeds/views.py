@@ -148,6 +148,9 @@ class UserFeeds(webapp.RequestHandler):
         feeds = models.OerFeed.gql("WHERE creator = :user",
                                    user = users.get_current_user())
 
+        if feeds.count() == 0:
+            feeds = None
+
         self.response.out.write(
             render_template('userfeeds.html', dict(feeds = feeds), 
                             self.request)

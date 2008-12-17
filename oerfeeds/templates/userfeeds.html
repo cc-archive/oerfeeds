@@ -4,6 +4,8 @@
 
 {% block body %}
 
+  {% if feeds %}
+
     <table id="manager">
 
       {% for f in feeds %}
@@ -18,7 +20,11 @@
       {% endfor %}
 
     </table>
-
-    <p>(<a href="http://www.opml.org/spec2">OPML Format</a>)</p>
+  {% else %}
+    <p>
+      You haven't contributed any feeds yet; would you like
+      to <a href="/add/">add one</a>?
+    </p>
+  {% endif %}
 
 {% endblock %}
