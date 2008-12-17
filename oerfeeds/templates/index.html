@@ -9,7 +9,12 @@
 
     <ul>
       <li><a href="/feeds.opml">OPML list of feeds</a></li>
-      <li><a href="{{login_url}}">Login</a> to add or edit your feeds.</li>
+      {% if user %}
+      <li><a href="/userfeeds/">Your feeds</a></li>
+      {% else %}
+      <li><a href="{{login_url}}">Login</a> to add or edit your
+      feeds.</li>
+      {% endif %}
     </ul>
 
 
