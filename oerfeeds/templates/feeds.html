@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block body %}
+
+    <h2>OER Feeds</h2>
+    <table id="manager">
+
+      {% for f in feeds %}
+
+      <tr>
+	<td><a href="{{ f.url }}">{{ f.title }}</a></td>
+	<td><a href="{{ f.url }}">{{ f.url }}</a></td>
+      </tr>
+
+      {% endfor %}
+
+    </table>
+
+
+{% endblock %}
+
+
+{% block footer %}
+<p>OPML Icon by <a href="http://www.opmlicons.com/">Matt Brett / OPML Icons</a>,
+  used under <a href="http://creativecommons.org/licenses/by-sa/2.5/">CC
+  BY-SA 2.5</a>
+</p>
+
+{% endblock %}

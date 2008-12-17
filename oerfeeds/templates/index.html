@@ -4,34 +4,33 @@
 
     <p>This site provides an index of 
       <acronym title="Open Educational Resource">OER</acronym> feeds which
-      can be aggregated by other applications.
+      can be aggregated by other applications. 
+      (<a href="/h/details">more information</a>)
     </p>
 
     <ul>
-      <li><a href="/feeds.opml">OPML list of feeds</a></li>
+      <li><a href="/feeds/">All feeds</a>
+	<ul>
+	  <li><a href="/feeds/opml">
+	      <img src="/resources/opml-icon-16x16.png" /> OPML</a>
+      (<a href="http://en.wikipedia.org/wiki/OPML">OPML
+      Format</a>)</li>
+	  </ul>
+      </li>
+
       {% if user %}
       <li><a href="/userfeeds/">Your feeds</a></li>
       {% else %}
-      <li><a href="{{login_url}}">Login</a> to add or edit your
-      feeds.</li>
+      <li><a href="{{login_url}}">Login</a> to add a feed.</li>
       {% endif %}
     </ul>
 
+{% endblock %}
 
-    <h2>Most Recent OER Feeds</h2>
-    <table id="manager">
-
-      {% for f in feeds %}
-
-      <tr>
-	<td><a href="{{ f.url }}">{{ f.title }}</a></td>
-	<td><a href="{{ f.url }}">{{ f.url }}</a></td>
-      </tr>
-
-      {% endfor %}
-
-    </table>
-
-    <p>(<a href="http://www.opml.org/spec2">OPML Format</a>)</p>
+{% block footer %}
+<p>OPML Icon by <a href="http://www.opmlicons.com/">Matt Brett / OPML Icons</a>,
+  used under <a href="http://creativecommons.org/licenses/by-sa/2.5/">CC
+  BY-SA 2.5</a>
+</p>
 
 {% endblock %}

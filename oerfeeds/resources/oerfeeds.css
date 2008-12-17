@@ -15,6 +15,7 @@ fieldset input{float:left;}
 .form-buttons{text-align:center;clear:both;padding:10px;width:100%;}
 
 #header{height:65px;text-align:right;width:100%;}
+#header h1 { float:left; padding-left:10px;}
 #topbar{background-color: #f7eed4;}
 #topbar{border-bottom:solid 1px #dba855;border-top:solid 1px #dba855;}
 #logo, #topbar{float:left;clear:both;width:100%;margin-bottom:30px;padding:0px;text-align:center;}
@@ -38,7 +39,7 @@ fieldset input{float:left;}
 #content fieldset legend{font-size:100%;font-weight:bolder;color:#dba855;clear:both;}
 #content p{clear:both;}
 
-#footer{clear:both;float:left;margin-top:35px;height:70px;background-color:#dba855;text-align:center;width:100%;color:#f7eed4;font-size:9pt;padding-top:1px;}
+#footer{clear:both;float:left;margin-top:35px;background-color:#dba855;text-align:center;width:100%;color:#f7eed4;font-size:9pt;padding-top:1px;}
 #footer a, a:visited {color:#f7eed4;, text-decoration: underline;}
 
 /*login*/

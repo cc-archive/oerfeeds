@@ -43,6 +43,27 @@ class Index(webapp.RequestHandler):
                             self.request)
             )
 
+class Feeds(webapp.RequestHandler):
+
+    def get(self):
+
+        feeds = models.OerFeed.all()
+
+        self.response.out.write(
+            render_template('feeds.html', dict(feeds = feeds), 
+                            self.request)
+            )
+
+
+class Help(webapp.RequestHandler):
+
+    def get(self):
+
+        self.response.out.write(
+            render_template('details.html', {},
+                            self.request)
+            )
+
 
 class AddOrEdit(webapp.RequestHandler):
 

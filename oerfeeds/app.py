@@ -6,11 +6,13 @@ from oerfeeds import views
 
 application = webapp.WSGIApplication(
     [('/', views.Index),
+     ('/h/details', views.Help),
      ('/add/', views.AddOrEdit),
      ('/edit/(.+)/', views.AddOrEdit),
      ('/delete/(.+)/', views.Delete),
      ('/userfeeds/', views.UserFeeds),
-     ('/feeds.opml', views.Opml),
+     ('/feeds/', views.Feeds),
+     ('/feeds/opml', views.Opml),
      ('/scrape', views.Scrape),
      ],
     debug=True)
