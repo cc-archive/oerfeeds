@@ -13,4 +13,3 @@ Recommended development environment:
 * Clone the git repository
 * Unzip the Google AppEngine SDK (google_appengine) in the root
   directory of the cloned repository.
-
